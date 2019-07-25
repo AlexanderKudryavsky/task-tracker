@@ -1,0 +1,50 @@
+input, textarea{
+  box-sizing: border-box;
+}
+
+.note{
+  &-form{
+    display: block;
+    width: 50vw;
+    margin: 0 auto;
+  }
+  &-form-field{
+    padding: 5px 0;
+  }
+  &-form-field >*{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+  }
+  &-form-field-text{
+    textarea{
+      min-height: 150px;
+    }
+  }
+  &-form-buttons{
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    button{
+      background-color: royalblue;
+      border: none;
+      padding: 6px 20px;
+      color: #ffffff;
+      cursor: pointer;
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+    button +*{
+      margin-left: 15px;
+      font-size: 15px;
+    }
+  }
+}
+.btn-save{
+  background: forestgreen;
+}
+.btn-cancel{
+  background: red;
+}

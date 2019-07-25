@@ -1,0 +1,38 @@
+{
+  "posts": [
+    {
+      "id": 3848,
+      "title": "First Task",
+      "text": "blabla",
+      "tags": null,
+      "date": "25.07.2019, 14:11:07",
+      "status": "notCompleted",
+      "color": "#0BB02F",
+      "priority": "high"
+    },
+    {
+      "id": 8086,
+      "title": "New task",
+      "text": "yooo",
+      "tags": null,
+      "date": "25.07.2019, 14:11:26",
+      "status": "completed",
+      "color": "#4845A0",
+      "priority": "low"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "title": "#fd"
+    },
+    {
+      "id": 2,
+      "title": "#dd"
+    },
+    {
+      "id": 3,
+      "title": "#dd"
+    }
+  ]
+}
