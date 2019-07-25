@@ -1,24 +1,24 @@
 {
   "posts": [
     {
-      "id": 3848,
-      "title": "First Task",
-      "text": "blabla",
+      "id": 288,
+      "title": "Note",
+      "text": "Hi there",
       "tags": null,
-      "date": "25.07.2019, 14:11:07",
-      "status": "notCompleted",
-      "color": "#0BB02F",
+      "date": "25.07.2019, 23:29:04",
+      "status": "completed",
+      "color": "#CBD7CC",
       "priority": "high"
     },
     {
-      "id": 8086,
-      "title": "New task",
-      "text": "yooo",
+      "id": 4436,
+      "title": "Сон",
+      "text": "Лечь спать в 00.00",
       "tags": null,
-      "date": "25.07.2019, 14:11:26",
-      "status": "completed",
-      "color": "#4845A0",
-      "priority": "low"
+      "date": "25.07.2019, 23:27:13",
+      "status": "notCompleted",
+      "color": "#885C83",
+      "priority": "medium"
     }
   ],
   "comments": [

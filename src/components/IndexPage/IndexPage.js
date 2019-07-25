@@ -33,7 +33,7 @@ class IndexPage extends React.Component {
     render(){
         return (
             <div className='todoList'>
-                <IndexPageSearch addTask={this.onAddTask} addTags={this.onAddTags} tagTitle={this.props.tagTitle}/>
+                <IndexPageSearch addTask={this.onAddTask}  tagTitle={this.props.tagTitle}/>
                 {this.props.view === 'inline' && <IndexPageTask {...this.props} deleteTask={this.onDeleteTask} editTask={this.onEditTask}/>}
                 {this.props.view === 'block' && <IndexPageTasksBlock {...this.props} deleteTask={this.onDeleteTask} editTask={this.onEditTask}/>}
             </div>

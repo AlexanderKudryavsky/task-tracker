@@ -77,8 +77,8 @@
   }
   &-priority{
     position: absolute;
-    right: 5px;
-    top: 15px;
+    right: 25%;
+    top: 20px;
     font-size: 12px;
     font-weight: bold;
   }
@@ -96,6 +96,8 @@
     }
     &-priority{
       font-size: 10px;
+      right: 10%;
+      top: 35%;
     }
   }
 }

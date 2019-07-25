@@ -10,7 +10,8 @@ class EditPage extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (prevProps !== this.props) {
-            this.setState({title: this.props.tasks.title, text: this.props.tasks.text})
+            this.setState({title: this.props.tasks.title, text: this.props.tasks.text,
+                completedStatus: this.props.tasks.status, priority: this.props.tasks.priority})
         }
     }
 
@@ -32,7 +33,6 @@ class EditPage extends React.Component {
             this.state.completedStatus, this.props.tasks.color, this.state.priority)
     };
     changeCompletedStatus = (e) => {
-        debugger
         this.setState({completedStatus: e.target.value})
     };
     changePriority = (e) => {

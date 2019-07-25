@@ -67,8 +67,8 @@ class IndexPageTasksBlock extends React.Component{
         this.state.tasks.forEach((t) => {
             task[t.status].push(<div key={t.id} priority={t.priority} className='note-block clear' draggable onDragStart={(e) => this.onDragStart(e, t.id)}>
                 <div className='note-block-round' style={{ backgroundColor: t.color}}>{t.title.charAt(0).toUpperCase()}</div>
-                {t.priority === 'high' && <div className='note-list-priority'>High Priority</div>}
-                {t.priority === 'low' && <div className='note-list-priority'>Low Priority</div>}
+                {t.priority === 'high' && <div className='note-block-priority'>High Priority</div>}
+                {t.priority === 'low' && <div className='note-block-priority'>Low Priority</div>}
                 <div className='note-block-wrap'>
                     <div className="note-block-descr">
                         <h2>{t.title}</h2>
