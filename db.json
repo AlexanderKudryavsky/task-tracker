@@ -24,15 +24,8 @@
   "comments": [
     {
       "id": 1,
-      "title": "#fd"
-    },
-    {
-      "id": 2,
-      "title": "#dd"
-    },
-    {
-      "id": 3,
-      "title": "#dd"
+      "login": "test",
+      "password": 12345
     }
   ]
 }

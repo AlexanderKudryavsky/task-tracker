@@ -78,12 +78,13 @@ class IndexPageTasksBlock extends React.Component{
                         <p>{t.date}</p>
                         <div className="note-block-tags">{t.tags}</div>
                     </div>
+                    {this.props.isAuth === true &&
                     <div className="note-block-btn">
                         <Link to={`/edit/${t.id}`}>
                             <button className="btn btn-edit">Edit</button>
                         </Link>
                         <button onClick={()=>this.onDeleteTask(t.id)} className="btn btn-delete">Delete</button>
-                    </div>
+                    </div>}
                 </div>
             </div>)
         });

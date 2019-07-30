@@ -2,6 +2,7 @@ import React from 'react';
 import {editTaskThunkCreator, setEditTaskThunkCreator} from "../../redux/todoReducer";
 import {connect} from 'react-redux';
 import {Link} from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
 
 class EditPage extends React.Component {
     componentDidMount() {
@@ -42,6 +43,7 @@ class EditPage extends React.Component {
     render() {
         return (
             <div>
+                <Navbar/>
                 <div className="note-form">
                     <h1>Edit Note:</h1>
                     <form onSubmit={this.onSaveClick}>
@@ -87,7 +89,6 @@ class EditPage extends React.Component {
                             </Link>
                         </div>
                     </form>
-
                 </div>
             </div>
         )

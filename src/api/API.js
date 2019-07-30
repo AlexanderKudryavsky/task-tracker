@@ -40,6 +40,10 @@ export const API = {
     },
     dnd(status, taskId){
         return axios.patch('http://localhost:3000/posts/' + taskId, {status})
+    },
+
+    usersChecking() {
+        return axios.get('http://localhost:3000/comments/')
     }
 
 };

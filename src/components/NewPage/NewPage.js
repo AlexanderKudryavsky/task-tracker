@@ -2,7 +2,8 @@ import React from 'react';
 import './NewPage.scss'
 import {addTaskThunkCreator} from "../../redux/todoReducer";
 import {connect} from 'react-redux';
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
 
 class NewPage extends React.Component {
 
@@ -41,62 +42,64 @@ class NewPage extends React.Component {
     };
 
     render() {
+        {if(!this.props.isAuth){return <Redirect to={'/login'}/>}}
+
         return (
-            <div className="note-form">
-                <h1>New Note</h1>
-                <div className="note-form-field">
-                    <label>Title</label>
-                    <input
-                        type="text"
-                        name="title"
-                        required="required"
-                        onChange={this.onTitleChange}
-                    />
+            <div>
+                <Navbar/>
+                <div className="note-form">
+                    <h1>New Note</h1>
+                    <div className="note-form-field">
+                        <label>Title</label>
+                        <input
+                            type="text"
+                            name="title"
+                            required="required"
+                            onChange={this.onTitleChange}
+                        />
+                    </div>
+                    <div className="note-form-field note-form-field-text">
+                        <label>Text</label>
+                        <textarea
+                            name="text"
+                            onChange={this.onTextChange}
+                        />
+                    </div>
+                    <div>
+                        <span>Completed </span>
+                        <select onChange={(e) => {
+                            this.changeCompletedStatus(e)
+                        }}>
+                            <option value='notCompleted'>Not completed</option>
+                            <option value='completed'>Completed</option>
+                        </select>
+                    </div>
+                    <div>
+                        <span>Priority </span>
+                        <select onChange={(e) => {
+                            this.changePriority(e)
+                        }}>
+                            <option value='medium'>Medium</option>
+                            <option value='high'>High</option>
+                            <option value='low'>Low</option>
+                        </select>
+                    </div>
+                    <div className="note-form-buttons">
+                        <Link to="/">
+                            <button onClick={this.onAddTask} className="btn">Save</button>
+                            <button className={'btn'}>Cancel</button>
+                        </Link>
+                    </div>
                 </div>
-                <div className="note-form-field note-form-field-text">
-                    <label>Text</label>
-                    <textarea
-                        name="text"
-                        onChange={this.onTextChange}
-                    />
-                </div>
-                <div>
-                    <span>Completed </span>
-                    <select onChange={(e) => {
-                        this.changeCompletedStatus(e)
-                    }}>
-                        <option value='notCompleted'>Not completed</option>
-                        <option value='completed'>Completed</option>
-                    </select>
-                </div>
-                <div>
-                    <span>Priority </span>
-                    <select onChange={(e) => {
-                        this.changePriority(e)
-                    }}>
-                        <option value='medium'>Medium</option>
-                        <option value='high'>High</option>
-                        <option value='low'>Low</option>
-                    </select>
-                </div>
-                <div className="note-form-buttons">
-                    <Link to="/">
-                        <button onClick={this.onAddTask} className="btn">Save</button>
-                        <button className={'btn'}>Cancel</button>
-                    </Link>
-                </div>
-
-
             </div>
         )
     }
 }
 
 let mapStateToProps = (state) => ({
-    tasks: state.todo.tasks
-})
+    tasks: state.todo.tasks,
+    isAuth: state.auth.isAuth
+});
 
-export default connect(mapStateToProps, {
-    addTaskThunkCreator
-})(NewPage)
+export default connect(mapStateToProps, {addTaskThunkCreator})(NewPage)
 

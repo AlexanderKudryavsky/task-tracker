@@ -4,4 +4,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 10%;
+  &-username{
+    margin: 5px;
+  }
+  &-logout{
+    color: #497DDD;
+    border-bottom: 1px solid;
+  }
 }

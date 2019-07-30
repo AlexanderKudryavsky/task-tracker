@@ -12,6 +12,8 @@ import {connect} from 'react-redux';
 import IndexPageTask from "./IndexPageTasks/IndexPageTask";
 import {dndThunkCreator} from "../../redux/todoReducer";
 import IndexPageTasksBlock from "./IndexPageTasksBlock/IndexPageTasksBlock";
+import Navbar from "../Navbar/Navbar";
+import * as axios from "axios";
 
 class IndexPage extends React.Component {
 
@@ -30,12 +32,17 @@ class IndexPage extends React.Component {
     };
 
 
-    render(){
+    render() {
         return (
-            <div className='todoList'>
-                <IndexPageSearch addTask={this.onAddTask}  tagTitle={this.props.tagTitle}/>
-                {this.props.view === 'inline' && <IndexPageTask {...this.props} deleteTask={this.onDeleteTask} editTask={this.onEditTask}/>}
-                {this.props.view === 'block' && <IndexPageTasksBlock {...this.props} deleteTask={this.onDeleteTask} editTask={this.onEditTask}/>}
+            <div>
+                <Navbar/>
+                <div className='todoList'>
+                    <IndexPageSearch addTask={this.onAddTask} tagTitle={this.props.tagTitle}/>
+                    {this.props.view === 'inline' &&
+                    <IndexPageTask {...this.props} deleteTask={this.onDeleteTask} editTask={this.onEditTask}/>}
+                    {this.props.view === 'block' &&
+                    <IndexPageTasksBlock {...this.props} deleteTask={this.onDeleteTask} editTask={this.onEditTask}/>}
+                </div>
             </div>
         )
     }
@@ -47,10 +54,12 @@ let mapStateToProps = (state) => ({
     tagTitle: state.todo.tagTitle,
     view: state.todo.view,
     priorityTitle: state.todo.priorityTitle,
-    sortByDateTitle: state.todo.sortByDateTitle
+    sortByDateTitle: state.todo.sortByDateTitle,
+    isAuth: state.auth.isAuth
 });
 
 
 export default connect(mapStateToProps, {
     addTagTitle, addTaskThunkCreator, getTaskThunkCreator,
-    deleteTaskThunkCreator, editTaskThunkCreator, dndThunkCreator})(IndexPage);
+    deleteTaskThunkCreator, editTaskThunkCreator, dndThunkCreator
+})(IndexPage);
