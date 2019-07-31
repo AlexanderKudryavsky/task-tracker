@@ -1,0 +1,11 @@
+.form-controls.error input{
+  border: solid 1px DarkRed;
+}
+.form-controls span{
+  color: DarkRed;
+}
+.form-controls span:before{
+  content: url("./../../img/warning.png");
+  margin-right: 5px;
+  color: DarkRed;
+}

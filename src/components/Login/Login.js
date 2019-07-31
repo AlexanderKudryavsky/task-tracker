@@ -2,10 +2,12 @@ import React from 'react';
 import {Field, reduxForm} from "redux-form";
 import './Login.scss'
 import {connect} from 'react-redux';
-import {
-    onLoginThunkCreator
-} from "./../../redux/authReducer";
+import {onLoginThunkCreator} from "./../../redux/authReducer";
 import {Redirect} from "react-router-dom";
+import {required, maxLength} from "../../validations/validations";
+import {Input} from "../../validations/FormControls/FormControls";
+
+const maxLength15 = maxLength(15);
 
 let LoginForm = (props) => {
     if(props.user){
@@ -14,14 +16,14 @@ let LoginForm = (props) => {
     return(
             <form  onSubmit={props.handleSubmit}>
                 <div>
-                    <Field className={'login-form-field'} placeholder={'Login'} name={'login'} component={'input'}/>
+                    <Field className={'login-form-field'} validate={[required, maxLength15]} placeholder={'Login'} name={'login'} component={Input}/>
                 </div>
                 <div>
-                    <Field className={'login-form-field'} placeholder={'Password'} name={'password'} component={'input'} type={'password'}/>
+                    <Field className={'login-form-field'} validate={[required, maxLength15]} placeholder={'Password'} name={'password'} component={Input} type={'password'}/>
                 </div>
-                <div>
-                    <Field className={'login-form-checkbox'} component={'input'} name={'rememberMe'} type='checkbox'/> remember me
-                </div>
+                {/*<div>*/}
+                    {/*<Field className={'login-form-checkbox'} component={'input'} name={'rememberMe'} type='checkbox'/> remember me*/}
+                {/*</div>*/}
                 <div>
                     <button className={'login-form-btn'}>Login</button>
                 </div>
