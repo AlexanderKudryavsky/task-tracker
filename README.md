@@ -12,6 +12,8 @@ Ability to mark a task as completed.
 Task contains name, description, creation time and priority.
 Task priority filter.
 Sort by creation date.
+Authorization(no server and database, only client).
+Auth validation(Redux-form).
 Moving tasks to completed and backward using Drag & Drop.
 Switch to tile display tasks and back.
 Assigning a random color to each task.

@@ -13,7 +13,6 @@ import IndexPageTask from "./IndexPageTasks/IndexPageTask";
 import {dndThunkCreator} from "../../redux/todoReducer";
 import IndexPageTasksBlock from "./IndexPageTasksBlock/IndexPageTasksBlock";
 import Navbar from "../Navbar/Navbar";
-import * as axios from "axios";
 
 class IndexPage extends React.Component {
 
