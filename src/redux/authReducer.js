@@ -8,7 +8,6 @@ const initialState = {
 
 export const SET_USER = 'SET_USER';
 export const LOG_OUT = 'LOG_OUT';
-export const CHANGE_AUTH_STATUS = 'CHANGE_AUTH_STATUS';
 
 
 const authReducer = (state = initialState, action) => {

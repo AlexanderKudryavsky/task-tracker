@@ -1,16 +1,17 @@
-import React from 'react';
+import React, {Suspense, lazy} from 'react';
 import './App.scss';
 import IndexPage from "./components/IndexPage/IndexPage";
 import {Route} from "react-router-dom";
-import NewPage from "./components/NewPage/NewPage";
-import EditPage from "./components/EditPage/EditPage";
-import Login from "./components/Login/Login";
+import Preloader from "./components/Preloader/Preloader";
+const NewPage = React.lazy(() => import('./components/NewPage/NewPage'));
+const EditPage = React.lazy(() => import("./components/EditPage/EditPage"));
+const Login = React.lazy(() => import("./components/Login/Login"));
 
 const App = (props) => {
     return(
         <div className={'app'}>
-            {/*<Navbar/>*/}
             <div>
+                <Suspense  fallback={<Preloader/>}>
                 <Route exact path='/' component={(props) =>
                     <IndexPage {...props}/>}
                 />
@@ -23,9 +24,8 @@ const App = (props) => {
                 <Route exact path='/login' component={() =>
                     <Login/>}
                 />
+                </Suspense>
             </div>
-
-
         </div>
     )
 };

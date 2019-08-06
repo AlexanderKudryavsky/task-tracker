@@ -1,4 +1,5 @@
 import React from 'react';
+import './../NewPage/NewPage.scss'
 import {editTaskThunkCreator, setEditTaskThunkCreator} from "../../redux/todoReducer";
 import {connect} from 'react-redux';
 import {Link} from "react-router-dom";

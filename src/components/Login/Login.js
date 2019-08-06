@@ -40,7 +40,6 @@ LoginForm = reduxForm({
 
 const Login = (props) => {
     const submit = (formData) => {
-        console.log(formData);
         props.onLoginThunkCreator(formData);
     };
     return(
