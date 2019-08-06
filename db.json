@@ -26,6 +26,11 @@
       "id": 1,
       "login": "test",
       "password": 12345
+    },
+    {
+      "id": 2,
+      "login": "santiago",
+      "password": 1488
     }
   ]
 }

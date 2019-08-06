@@ -21,12 +21,13 @@ let LoginForm = (props) => {
                 <div>
                     <Field className={'login-form-field'} validate={[required, maxLength15]} placeholder={'Password'} name={'password'} component={Input} type={'password'}/>
                 </div>
-                {/*<div>*/}
-                    {/*<Field className={'login-form-checkbox'} component={'input'} name={'rememberMe'} type='checkbox'/> remember me*/}
-                {/*</div>*/}
+                <div>
+                    <Field className={'login-form-checkbox'} component={'input'} name={'rememberMe'} type='checkbox'/> remember me
+                </div>
                 <div>
                     <button className={'login-form-btn'}>Login</button>
                 </div>
+                {props.error && <div className={'login-form-error'}>{props.error}</div>}
             </form>
 
     )

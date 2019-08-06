@@ -27,3 +27,11 @@
   position: absolute;
   top: -15vh;
 }
+.login-form-error {
+  color: DarkRed;
+}
+.login-form-error:before{
+  content: url("./../../img/warning.png");
+  margin-right: 5px;
+  color: DarkRed;
+}
