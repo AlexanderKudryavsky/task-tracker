@@ -1,6 +1,7 @@
 import React from 'react';
 import {addTagTitle, changePriority, changeView, sortByDate} from "../../../redux/todoReducer";
 import {connect} from 'react-redux';
+import {getView} from "../../../selectors/selectors";
 
 class IndexPageSearch extends React.Component {
 
@@ -42,7 +43,7 @@ class IndexPageSearch extends React.Component {
 }
 
 let mapStateToProps = (state) => ({
-    view: state.todo.view
+    view: getView(state)
 });
 
 export default connect(mapStateToProps, {addTagTitle, changeView, changePriority, sortByDate})(IndexPageSearch)

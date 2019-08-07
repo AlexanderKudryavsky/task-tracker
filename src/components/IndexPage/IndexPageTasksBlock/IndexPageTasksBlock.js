@@ -13,7 +13,8 @@ class IndexPageTasksBlock extends React.Component{
     componentDidUpdate(prevProps) {
         if(prevProps !== this.props){
             if(this.props.sortByDateTitle === 'new'){
-                this.setState({tasks: this.props.tasks.sort((a, b) => {
+                this.setState({tasks: this.props.tasks.sort
+                    ((a, b) => {
                         if(a.date > b.date){return 1}
                         if(a.date < b.date){return -1}
                         else return 0
@@ -33,7 +34,6 @@ class IndexPageTasksBlock extends React.Component{
 
 
     onDeleteTask = (id) => {
-
         this.props.deleteTask(id)
     };
 
@@ -76,7 +76,7 @@ class IndexPageTasksBlock extends React.Component{
                     <div className="note-block-content">
                         <div>{t.text}</div>
                         <p>{t.date}</p>
-                        <div className="note-block-tags">{t.tags}</div>
+                        <div className="note-block-tags">{t.tags && t.tags.join(' ')}</div>
                     </div>
                     {this.props.isAuth === true &&
                     <div className="note-block-btn">

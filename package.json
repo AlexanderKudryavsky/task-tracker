@@ -13,6 +13,7 @@
     "redux": "^4.0.1",
     "redux-form": "^8.2.5",
     "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
     "sass": "^1.21.0"
   },
   "scripts": {

@@ -13,6 +13,14 @@ import IndexPageTask from "./IndexPageTasks/IndexPageTask";
 import {dndThunkCreator} from "../../redux/todoReducer";
 import IndexPageTasksBlock from "./IndexPageTasksBlock/IndexPageTasksBlock";
 import Navbar from "../Navbar/Navbar";
+import {
+    getIsAuth,
+    getPriorityTitle,
+    getSortByDateTitle,
+    getTagTitle,
+    getTasks,
+    getView
+} from "../../selectors/selectors";
 
 class IndexPage extends React.Component {
 
@@ -48,13 +56,12 @@ class IndexPage extends React.Component {
 }
 
 let mapStateToProps = (state) => ({
-    tasks: state.todo.tasks,
-    tags: state.todo.tags,
-    tagTitle: state.todo.tagTitle,
-    view: state.todo.view,
-    priorityTitle: state.todo.priorityTitle,
-    sortByDateTitle: state.todo.sortByDateTitle,
-    isAuth: state.auth.isAuth
+    tasks: getTasks(state),
+    tagTitle: getTagTitle(state),
+    view: getView(state),
+    priorityTitle: getPriorityTitle(state),
+    sortByDateTitle: getSortByDateTitle(state),
+    isAuth: getIsAuth(state)
 });
 
 

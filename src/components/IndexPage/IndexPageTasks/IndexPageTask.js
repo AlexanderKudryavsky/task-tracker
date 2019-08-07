@@ -9,35 +9,28 @@ class IndexPageTask extends React.Component {
         currentId: null
     };
 
-    componentDidUpdate(prevProps) {
+    // componentDidUpdate(prevProps, prevState, snapshot) {
+    //     if(this.props.tasks !== prevProps.tasks){
+    //         this.setState({tasks: this.props.tasks})
+    //     }
+    // }
+
+    componentDidUpdate(prevProps){
         if (prevProps !== this.props) {
             if (this.props.sortByDateTitle === 'new') {
                 this.setState({
                     tasks: this.props.tasks.sort((a, b) => {
-                        if (a.date > b.date) {
-                            return 1
-                        }
-                        if (a.date < b.date) {
-                            return -1
-                        }
-                        else {
-                            return 0
-                        }
+                        if (a.date > b.date) {return 1}
+                        if (a.date < b.date) {return -1}
+                        else {return 0}
                     })
                 });
             }
             if (this.props.sortByDateTitle === 'old') {
-                this.setState({
-                    tasks: this.props.tasks.sort((a, b) => {
-                        if (a.date < b.date) {
-                            return 1
-                        }
-                        if (a.date > b.date) {
-                            return -1
-                        }
-                        else {
-                            return 0
-                        }
+                this.setState({tasks: this.props.tasks.sort((a, b) => {
+                        if (a.date < b.date) {return 1}
+                        if (a.date > b.date) {return -1}
+                        else {return 0}
                     })
                 });
             }
@@ -89,7 +82,7 @@ class IndexPageTask extends React.Component {
                     </div>
                     <div className="note-list-content">
                         <div>{t.text}</div>
-                        <p className="note-list-tags"><span>{t.tags}</span></p>
+                        <p className="note-list-tags"><span>{t.tags && t.tags.join(' ')}</span></p>
                     </div>
                     {this.props.isAuth === true &&
                     <div className="note-list-btn">
